@@ -29,35 +29,13 @@ package view;
  */
 public class NovaOsView extends javax.swing.JInternalFrame {
 
-
-    private ViewPrincipal viewPrincipal;
-
     /**
      * Creates new form NovaOsView
      */
     public NovaOsView() {
         initComponents();
-        
     }
-        /**
-     * @see Construtor usado quando classe é instanciada na ViewPrincipal,
-     * recebe a viewPrincipal como pai e organiza esse JInternalFrame dentro do
-     * JFrame principal.
-     * @param menuView 
-     */
-    public NovaOsView(ViewPrincipal viewPrincipal) {
-        //Esconde barra de título padrão do JInternalFrama.
-        setRootPaneCheckingEnabled(false);
-        javax.swing.plaf.InternalFrameUI frame = this.getUI();
-        ((javax.swing.plaf.basic.BasicInternalFrameUI) frame).setNorthPane(null);
 
-        //Inicialização dos componentes padrões do JFrame.
-        initComponents();
-              this.viewPrincipal = viewPrincipal;
-        
-        //Carrega todas os modelos de tabelas.
-       // atualizarTabelas();
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,19 +45,15 @@ public class NovaOsView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBorder(null);
-        setResizable(true);
-        setTitle("Os");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
+            .addGap(0, 394, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
         pack();

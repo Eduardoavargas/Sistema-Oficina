@@ -22,7 +22,6 @@ import util.ValidacaoException;
 /**
  *
  * @author eduardo
- * 
  */
 public class LoginView extends javax.swing.JFrame {
 
@@ -198,7 +197,7 @@ public class LoginView extends javax.swing.JFrame {
 
             if (rs.getString("USER_SENHA").equals(txtUserNome.getText())) {
 
-                ViewPrincipal t = new ViewPrincipal(rs.getString("USER_NOME"));
+                MenuView t = new MenuView(rs.getString("USER_NOME"));
 
                 t.setVisible(true);
                 t.setLocationRelativeTo(null);

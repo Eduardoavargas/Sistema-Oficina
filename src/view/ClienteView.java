@@ -33,10 +33,6 @@ public class ClienteView extends javax.swing.JInternalFrame {
         pnlTabela.setVisible(false);
     }
 
- //   ClienteView(ViewPrincipal aThis) {
-   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   // }
-
     public ClienteControl getClienteControl() {
         return clienteControl;
     }
