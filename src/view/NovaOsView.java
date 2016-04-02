@@ -33,7 +33,11 @@ public class NovaOsView extends javax.swing.JInternalFrame {
      * Creates new form NovaOsView
      */
     public NovaOsView() {
-        initComponents();
+       // initComponents();
+    }
+
+    NovaOsView(ViewPrincipal viewPrincipal) {
+        
     }
 
     /**
