@@ -37,7 +37,7 @@ public class NovaOsView extends javax.swing.JInternalFrame {
     }
 
     NovaOsView(ViewPrincipal viewPrincipal) {
-        
+        initComponents();
     }
 
     /**
@@ -49,15 +49,17 @@ public class NovaOsView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGap(0, 418, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 320, Short.MAX_VALUE)
         );
 
         pack();

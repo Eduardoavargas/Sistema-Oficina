@@ -27,7 +27,15 @@ public class ClienteView extends javax.swing.JInternalFrame {
      * Creates new form ClienteView
      */
     public ClienteView() {
-        clienteControl = new ClienteControl();
+      //  clienteControl = new ClienteControl();
+       // initComponents();
+     //   pnlNovo.setVisible(false);
+     //   pnlTabela.setVisible(false);
+    }
+
+    ClienteView(ViewPrincipal viewPrincipal) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    clienteControl = new ClienteControl();
         initComponents();
         pnlNovo.setVisible(false);
         pnlTabela.setVisible(false);

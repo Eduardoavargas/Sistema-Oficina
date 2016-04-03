@@ -52,7 +52,7 @@ ClienteControl clienteClontrol = new ClienteControl();
         setExtendedState(MAXIMIZED_BOTH);
 
         dpnCorpo.add(novaOsView = new NovaOsView(this));
-     //   dpnCorpo.add(clienteView = new ClienteView(this));
+        dpnCorpo.add(clienteView = new ClienteView(this));
   
     }    public ViewPrincipal(String usuario) {
         this();
@@ -70,8 +70,6 @@ ClienteControl clienteClontrol = new ClienteControl();
 
         jScrollPane1 = new javax.swing.JScrollPane();
         dpnCorpo = new javax.swing.JDesktopPane();
-        jPanel1 = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
         lblOperador = new javax.swing.JLabel();
         lblOperadorNome = new javax.swing.JLabel();
@@ -92,36 +90,15 @@ ClienteControl clienteClontrol = new ClienteControl();
         dpnCorpo.setAutoscrolls(true);
         dpnCorpo.setMaximumSize(new java.awt.Dimension(0, 0));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(820, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-
-        dpnCorpo.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout dpnCorpoLayout = new javax.swing.GroupLayout(dpnCorpo);
         dpnCorpo.setLayout(dpnCorpoLayout);
         dpnCorpoLayout.setHorizontalGroup(
             dpnCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 1050, Short.MAX_VALUE)
         );
         dpnCorpoLayout.setVerticalGroup(
             dpnCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dpnCorpoLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 536, Short.MAX_VALUE))
+            .addGap(0, 656, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(dpnCorpo);
@@ -208,12 +185,17 @@ ClienteControl clienteClontrol = new ClienteControl();
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void clienteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteMenuItemActionPerformed
-    
+    if (!clienteView.isVisible()){
+        LimparDesktop();
+    //           this.dpnCorpo.setMinimumSize(clienteView.getMinimumSize());
+//        this.dpnCorpo.add(clienteView);
+        clienteView.setVisible(true);
+    }
            
           //   ClienteView clienteView = new ClienteView();
-       this.dpnCorpo.setMinimumSize(clienteView.getMinimumSize());
-        this.dpnCorpo.add(clienteView);
-        clienteView.setVisible(true);
+      // this.dpnCorpo.setMinimumSize(clienteView.getMinimumSize());
+      //  this.dpnCorpo.add(clienteView);
+      //  clienteView.setVisible(true);
         
     }//GEN-LAST:event_clienteMenuItemActionPerformed
 
@@ -300,13 +282,11 @@ entityManager.close();
     private javax.swing.JMenuItem clienteMenuItem;
     private javax.swing.JDesktopPane dpnCorpo;
     private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
