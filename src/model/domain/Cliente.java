@@ -5,6 +5,8 @@
  */
 package model.domain;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +21,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
 import util.ValidacaoException;
 
 /**
@@ -28,6 +31,9 @@ import util.ValidacaoException;
 @Entity
 @Table(name = "TB_CLIENTE")
 public class Cliente implements Serializable {
+
+    @Transient
+    private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 
     //private Set enderecos;
     @Id
@@ -104,7 +110,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCriado(Date criado) {
+        Date oldCriado = this.criado;
         this.criado = criado;
+        changeSupport.firePropertyChange("criado", oldCriado, criado);
     }
 
     public Date getModificado() {
@@ -112,7 +120,9 @@ public class Cliente implements Serializable {
     }
 
     public void setModificado(Date modificado) {
+        Date oldModificado = this.modificado;
         this.modificado = modificado;
+        changeSupport.firePropertyChange("modificado", oldModificado, modificado);
     }
 
     public int getNumero() {
@@ -120,7 +130,9 @@ public class Cliente implements Serializable {
     }
 
     public void setNumero(int numero) {
+        int oldNumero = this.numero;
         this.numero = numero;
+        changeSupport.firePropertyChange("numero", oldNumero, numero);
     }
 
     public String getRua() {
@@ -132,11 +144,15 @@ public class Cliente implements Serializable {
     }
 
     public void setEmail(String email) {
+        String oldEmail = this.email;
         this.email = email;
+        changeSupport.firePropertyChange("email", oldEmail, email);
     }
 
     public void setRua(String rua) {
+        String oldRua = this.rua;
         this.rua = rua;
+        changeSupport.firePropertyChange("rua", oldRua, rua);
     }
 
     public String getBairro() {
@@ -144,7 +160,9 @@ public class Cliente implements Serializable {
     }
 
     public void setBairro(String bairro) {
+        String oldBairro = this.bairro;
         this.bairro = bairro;
+        changeSupport.firePropertyChange("bairro", oldBairro, bairro);
     }
 
     public String getCidade() {
@@ -152,7 +170,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCidade(String cidade) {
+        String oldCidade = this.cidade;
         this.cidade = cidade;
+        changeSupport.firePropertyChange("cidade", oldCidade, cidade);
     }
 
     public String getUf() {
@@ -160,7 +180,9 @@ public class Cliente implements Serializable {
     }
 
     public void setUf(String uf) {
+        String oldUf = this.uf;
         this.uf = uf;
+        changeSupport.firePropertyChange("uf", oldUf, uf);
     }
 
     public int getCep() {
@@ -168,7 +190,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCep(int cep) {
+        int oldCep = this.cep;
         this.cep = cep;
+        changeSupport.firePropertyChange("cep", oldCep, cep);
     }
 
     public String getComplemento() {
@@ -176,7 +200,9 @@ public class Cliente implements Serializable {
     }
 
     public void setComplemento(String complemento) {
+        String oldComplemento = this.complemento;
         this.complemento = complemento;
+        changeSupport.firePropertyChange("complemento", oldComplemento, complemento);
     }
 
     public String getTelefone() {
@@ -184,7 +210,9 @@ public class Cliente implements Serializable {
     }
 
     public void setTelefone(String telefone) {
+        String oldTelefone = this.telefone;
         this.telefone = telefone;
+        changeSupport.firePropertyChange("telefone", oldTelefone, telefone);
     }
 
     public String getCelular() {
@@ -192,7 +220,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCelular(String celular) {
+        String oldCelular = this.celular;
         this.celular = celular;
+        changeSupport.firePropertyChange("celular", oldCelular, celular);
     }
 
     public String getTelefone2() {
@@ -207,7 +237,9 @@ public class Cliente implements Serializable {
     }
      */
     public void setTelefone2(String telefone2) {
+        String oldTelefone2 = this.telefone2;
         this.telefone2 = telefone2;
+        changeSupport.firePropertyChange("telefone2", oldTelefone2, telefone2);
     }
 
     public int getTipo() {
@@ -215,7 +247,9 @@ public class Cliente implements Serializable {
     }
 
     public void setTipo(int tipo) {
+        int oldTipo = this.tipo;
         this.tipo = tipo;
+        changeSupport.firePropertyChange("tipo", oldTipo, tipo);
     }
 
     public int getCpf() {
@@ -223,7 +257,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCpf(int cpf) {
+        int oldCpf = this.cpf;
         this.cpf = cpf;
+        changeSupport.firePropertyChange("cpf", oldCpf, cpf);
     }
 
     public Integer getCodigo() {
@@ -231,7 +267,9 @@ public class Cliente implements Serializable {
     }
 
     public void setCodigo(Integer codigo) {
+        Integer oldCodigo = this.codigo;
         this.codigo = codigo;
+        changeSupport.firePropertyChange("codigo", oldCodigo, codigo);
     }
 
     public String getNome() {
@@ -239,7 +277,9 @@ public class Cliente implements Serializable {
     }
 
     public void setNome(String nome) {
+        String oldNome = this.nome;
         this.nome = nome;
+        changeSupport.firePropertyChange("nome", oldNome, nome);
     }
 
     public boolean isNew() {
@@ -275,6 +315,14 @@ public class Cliente implements Serializable {
         if (this.nome == null || this.nome.equals("")) {
             throw new ValidacaoException("Campo nome não preenchido");
         }
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
 
 }

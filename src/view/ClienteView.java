@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.domain.Cliente_;
+import model.domain.Cliente;
 import util.BuscaCep;
 import util.ValidacaoException;
 
@@ -34,6 +34,13 @@ public class ClienteView extends javax.swing.JInternalFrame {
     }
 
     ClienteView(ViewPrincipal viewPrincipal) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    clienteControl = new ClienteControl();
+        initComponents();
+        pnlNovo.setVisible(false);
+        pnlTabela.setVisible(false);
+    }
+        ClienteView(NovaOsView novaOsView) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     clienteControl = new ClienteControl();
         initComponents();
@@ -121,6 +128,11 @@ public class ClienteView extends javax.swing.JInternalFrame {
         txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPesquisarActionPerformed(evt);
+            }
+        });
+        txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisarKeyReleased(evt);
             }
         });
 
@@ -676,6 +688,11 @@ pnlNovo.setVisible(true);
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+clienteControl.pesquisar(); 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPesquisarKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

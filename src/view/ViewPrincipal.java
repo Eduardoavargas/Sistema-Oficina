@@ -53,7 +53,7 @@ ClienteControl clienteClontrol = new ClienteControl();
 
         dpnCorpo.add(novaOsView = new NovaOsView(this));
         dpnCorpo.add(clienteView = new ClienteView(this));
-  
+  lblOperadorNome.setText("Modo Teste");
     }    public ViewPrincipal(String usuario) {
         this();
         lblOperadorNome.setText(usuario);
@@ -190,6 +190,11 @@ ClienteControl clienteClontrol = new ClienteControl();
     //           this.dpnCorpo.setMinimumSize(clienteView.getMinimumSize());
 //        this.dpnCorpo.add(clienteView);
         clienteView.setVisible(true);
+        try {
+            clienteView.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(ViewPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
            
           //   ClienteView clienteView = new ClienteView();
